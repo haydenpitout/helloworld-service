@@ -29,19 +29,19 @@ A Serverless starter that adds ES6, TypeScript, serverless-offline, linting, env
 To create a new Serverless project.
 
 ``` bash
-$ serverless create --name YOUR_PROJECT_NAME --template-url https://github.com/haydenpitout/serverless-nodejs-boilerplate.git
+sls create --name YOUR_PROJECT_NAME --template-url https://github.com/haydenpitout/serverless-nodejs-boilerplate.git
 ```
 
 Enter the new directory
 
 ``` bash
-$ cd YOUR_PROJECT_NAME
+cd YOUR_PROJECT_NAME
 ```
 
 Install the Node.js packages
 
 ``` bash
-$ npm install
+npm install
 ```
 
 ### Usage
@@ -49,25 +49,25 @@ $ npm install
 To run a function on your local
 
 ``` bash
-$ serverless invoke local --function hello
+sls invoke local --function hello
 ```
 
 To simulate API Gateway locally using [serverless-offline](https://github.com/dherault/serverless-offline)
 
 ``` bash
-$ serverless offline start
+sls offline start
 ```
 
 Deploy your project
 
 ``` bash
-$ serverless deploy
+sls deploy
 ```
 
 Deploy a single function
 
 ``` bash
-$ serverless deploy function --function hello
+sls deploy function --function hello
 ```
 
 #### Running Tests
@@ -75,7 +75,7 @@ $ serverless deploy function --function hello
 Run your tests using
 
 ``` bash
-$ npm test
+npm test
 ```
 
 We use Jest to run our tests. You can read more about setting up your tests [here](https://facebook.github.io/jest/docs/en/getting-started.html#content).
