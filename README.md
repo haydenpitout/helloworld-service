@@ -29,7 +29,7 @@ A Serverless starter that adds ES6, TypeScript, serverless-offline, linting, env
 To create a new Serverless project.
 
 ``` bash
-$ serverless create --name YOUR_PROJECT_NAME --template-url https://github.com/haydenpitout/serverless-nodejs-boilerplate
+$ serverless create --name YOUR_PROJECT_NAME --template-url https://github.com/haydenpitout/serverless-nodejs-boilerplate.git
 ```
 
 Enter the new directory
