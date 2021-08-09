@@ -1,5 +1,5 @@
 {
-  "name": "serverless-nodejs-boilerplate",
+  "name": "helloworld-service",
   "version": "2.2.0",
   "description": "A boilerplate to help you get up and running with a Node.js, Serverless Framework project.",
   "main": "src/handlers/hello.js",

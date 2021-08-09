@@ -1,5 +1,5 @@
 # NOTE: update this with your service name
-service: serverless-nodejs-starter
+service: helloworld-service
 
 # Create an optimized package for our functions
 package:
