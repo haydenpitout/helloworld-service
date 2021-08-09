@@ -2,7 +2,7 @@
 
 A Serverless starter that adds ES6, TypeScript, serverless-offline, linting, environment variables, and unit test support.
 
-[Serverless Node.js Boilerplate](https://github.com/AnomalyInnovations/serverless-nodejs-starter) uses the [serverless-bundle](https://github.com/AnomalyInnovations/serverless-bundle) plugin and the [serverless-offline](https://github.com/dherault/serverless-offline) plugin. It supports:
+Please Note: This boilerplate is based heavily on [Serverless Node.js Boilerplate](https://github.com/AnomalyInnovations/serverless-nodejs-starter) and uses the [serverless-bundle](https://github.com/AnomalyInnovations/serverless-bundle) plugin and the [serverless-offline](https://github.com/dherault/serverless-offline) plugin. It supports:
 
 - **Generating optimized Lambda packages with Webpack**
 - **Using ES6 or TypeScript in your handler functions**
