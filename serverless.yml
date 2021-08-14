@@ -24,9 +24,9 @@ provider:
   #  SAMPLE_ENV_VAR: ${env:SAMPLE_ENV_VAR}
 
 functions:
-  hello:
-    handler: src/handlers/hello.handler
+  createItem:
+    handler: src/handlers/createItem.handler
     events:
       - http:
-          method: GET
-          path: /hello
+          method: POST
+          path: /item
