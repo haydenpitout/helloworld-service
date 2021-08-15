@@ -3,4 +3,4 @@ ItemsTableIAM:
   Action:
     - dynamodb:PutItem
   Resource:
-    - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/ItemsTable
+    - ${self:custom.ItemsTable.arn}

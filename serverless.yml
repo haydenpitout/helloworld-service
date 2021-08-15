@@ -7,7 +7,6 @@ package:
 
 plugins:
   - serverless-bundle # Package our functions with Webpack
-  - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
 
 provider:
@@ -15,6 +14,8 @@ provider:
   runtime: nodejs14.x
   stage: ${opt:stage, 'dev'}
   region: us-east-1
+  environment:
+    ITEMS_TABLE_NAME: ${self:custom.ItemsTable.name}
   iamRoleStatements:
     - ${file(iam/ItemsTableIAM.yml):ItemsTableIAM}
 
@@ -37,3 +38,8 @@ functions:
       - http:
           method: POST
           path: /item
+
+custom:
+  ItemsTable:
+    name: !Ref ItemsTable
+    arn: !GetAtt ItemsTable.Arn
