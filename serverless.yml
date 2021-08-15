@@ -38,6 +38,12 @@ functions:
       - http:
           method: POST
           path: /item
+  getItems:
+    handler: src/handlers/getItems.handler
+    events:
+      - http:
+          method: GET
+          path: /items
 
 custom:
   ItemsTable:
