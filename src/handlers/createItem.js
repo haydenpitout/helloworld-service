@@ -14,6 +14,9 @@ async function createItem(event, context) {
     title,
     description,
     status: 'OPEN',
+    highestBid: {
+      amount: 0,
+    },
     createdAt: now.toISOString(),
   };
 

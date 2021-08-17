@@ -53,6 +53,13 @@ functions:
           method: GET
           path: /item/{id}
 
+  placeBid:
+    handler: src/handlers/placeBid.handler
+    events:
+      - http:
+          method: PATCH
+          path: /item/{id}/bid
+
 custom:
   ItemsTable:
     name: !Ref ItemsTable
