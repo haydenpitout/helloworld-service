@@ -1,12 +1,19 @@
 import AWS from 'aws-sdk';
 import commonMiddleware from '../lib/commonMiddleware';
 import createError from 'http-errors';
+import { getItemById } from './getItem';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 async function placeBid(event, context) {
   const { id } = event.pathParameters;
   const { amount } = event.body;
+
+  const item = await getItemById(id);
+
+  if (amount <= item.highestBid.amount) {
+    throw new createError.Forbidden(`Your bid must be higher than ${item.highestBid.amount}!`);
+  }
 
   const params = {
     TableName: process.env.ITEMS_TABLE_NAME,

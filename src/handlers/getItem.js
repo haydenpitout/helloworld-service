@@ -4,9 +4,8 @@ import createError from 'http-errors';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-async function getItem(event, context) {
+export async function getItemById(id) {
   let item;
-  const { id } = event.pathParameters;
 
   try {
     const result = await dynamodb
@@ -25,6 +24,13 @@ async function getItem(event, context) {
   if (!item) {
     throw new createError.NotFound(`Item with ID "${id}" not found!`);
   }
+
+  return item;
+}
+
+async function getItem(event, context) {
+  const { id } = event.pathParameters;
+  const item = await getItemById(id);
 
   return {
     statusCode: 200,
