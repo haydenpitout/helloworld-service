@@ -1,7 +1,9 @@
-import { v4 as uuid } from 'uuid';
 import AWS from 'aws-sdk';
-import commonMiddleware from '../lib/commonMiddleware';
+import { v4 as uuid } from 'uuid';
 import createError from 'http-errors';
+import validator from '@middy/validator';
+import commonMiddleware from '../lib/commonMiddleware';
+import createItemSchema from '../lib/schemas/createItemSchema';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
@@ -41,4 +43,6 @@ async function createItem(event, context) {
   };
 }
 
-export const handler = commonMiddleware(createItem);
+export const handler = commonMiddleware(createItem).use(
+  validator({ inputSchema: createItemSchema })
+);
