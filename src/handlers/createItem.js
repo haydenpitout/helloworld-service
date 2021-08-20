@@ -8,6 +8,8 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 async function createItem(event, context) {
   const { title, description } = event.body;
   const now = new Date();
+  const endDate = new Date();
+  endDate.setHours(now.getHours() + 1);
 
   const item = {
     id: uuid(),
@@ -17,6 +19,7 @@ async function createItem(event, context) {
     highestBid: {
       amount: 0,
     },
+    endingAt: endDate.toISOString(),
     createdAt: now.toISOString(),
   };
 
